@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "../CSS/Home.css"; 
 import { BiArrowFromLeft, BiDownload } from "react-icons/bi";
 import Typewriter from "typewriter-effect";
@@ -45,8 +45,15 @@ const Home = () => {
 // Profile Section Component
 const ProfileSection = ({ textToSpeakRef }) => {
   const speakText = () => {
-    const utterance = new SpeechSynthesisUtterance(textToSpeakRef.current);
-    speechSynthesis.speak(utterance);
+    if (typeof SpeechSynthesisUtterance !== "undefined") {
+      const utterance = new SpeechSynthesisUtterance(textToSpeakRef.current);
+      utterance.onerror = (event) => {
+        console.error('Speech synthesis error:', event.error);
+      };
+      speechSynthesis.speak(utterance);
+    } else {
+      console.warn("Speech synthesis not supported in this browser.");
+    }
   };
 
   return (
@@ -65,7 +72,7 @@ const ProfileSection = ({ textToSpeakRef }) => {
         transition={{ type: "spring", stiffness: 125, delay: 0.5, duration: 0.7 }}
         onClick={speakText}
         role="button"
-        aria-labelledby="speak-intro"
+        aria-label="Speak introduction" // Updated to improve accessibility
         tabIndex={0}
         onKeyDown={(e) => e.key === 'Enter' && speakText()}
       >
@@ -73,7 +80,6 @@ const ProfileSection = ({ textToSpeakRef }) => {
           <PiSpeakerSimpleHighFill size="1.5rem" />
         </div>
       </motion.div>
-      <span id="speak-intro" className="visually-hidden"></span>
     </div>
   );
 };
