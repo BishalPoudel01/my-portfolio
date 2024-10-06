@@ -1,0 +1,72 @@
+/* Skills Section Styling */
+.skills-section {
+  padding: 2rem;
+  background-image: url('../../img/project.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #03041c;
+  margin-bottom: 2rem;
+}
+
+/* Skills Grid */
+.skill-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Skill Icon and Skill Bar Styling */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.skill-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.2);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-icon img {
+    width: 40px;
+    height: 40px;
+  }
+}

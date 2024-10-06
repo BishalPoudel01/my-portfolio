@@ -1,0 +1,226 @@
+/* Box-sizing for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Container Styles */
+.container {
+  width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin: 2rem auto;
+}
+
+/* Media Queries for Container */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Row Styles */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * 0);
+  margin-right: calc(-0.5 * 1.5rem);
+  margin-left: calc(-0.5 * 1.5rem);
+}
+
+/* Column Styles */
+.row > * {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(1.5rem * 0.5);
+  padding-left: calc(1.5rem * 0.5);
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .blog-md {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 33.33333%;
+  }
+}
+
+/* Height Utility Class */
+.h-100 {
+  height: 100% ;
+}
+
+
+.align-items-stretch {
+  align-items: stretch ;
+}
+
+.blog-layout .v-height {
+  height: 240px;
+}
+
+/* Blog Entry Styles */
+.blog-layout .h-entry {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Featured Image Styles */
+.blog-layout .featured-img {
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+  transition: transform 0.3s ease; 
+}
+
+/* Additional styles for hover effect */
+.blog-layout .h-entry:hover .featured-img {
+  transform: scale(1.05); 
+}
+
+/* Hide text on hover */
+.blog-layout .h-entry:hover .text {
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+/* Blog Text Styles */
+.blog-layout .text {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  padding: 10px;
+}
+
+/* Date Styles */
+.blog-layout .text .date {
+  font-size: 12px;
+  color: #fff; 
+}
+
+/* Title Styles */
+.blog-layout .text h2 {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+/* Gradient Overlay */
+.blog-layout .gradient {
+  position: relative;
+}
+
+.blog-layout .gradient:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 18%,
+    rgba(0, 0, 0, 0.8) 99%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* Learn More Button */
+.learn-more {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: right;
+}
+
+.learn-more-btn {
+  background-color: #217ee7;
+  padding: 8px 16px; 
+  color: #03041c; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  display: inline-block; /* Block level element */
+  font-size: 0.9rem; /* Smaller font size */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.learn-more-btn:hover {
+  background-color: #0f4685; /* Change background on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+  color: #fff; /* Change text color on hover */
+}
+
+
+/* Blog Links Styles */
+.blog-links {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+  gap: 1rem;
+}
+
+.blog-link .web,
+.blog-link .git {
+  margin-top: -300%;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  line-height: 50px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-layout:hover .blog-links {
+  opacity: 1; 
+}
+
+.blog-link .web:hover,
+.blog-link .git:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.21, 0.6, 0.44, 2.18) !important;
+}
+
+/* Blog Layout Hover Effect */
+.blog-layout:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ebebeb;
+}

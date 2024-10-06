@@ -1,0 +1,94 @@
+/* General Styles */
+.experience { 
+  padding: 2rem; 
+  background-color: #f8f9fa; 
+}
+
+.txt {
+  font-size: 2rem; 
+  text-align: center; 
+  margin-bottom: 1.5rem; 
+  color: var(--highlight-color); 
+}
+
+/* Experience Head */
+.exp__head {
+  display: flex; 
+  align-items: center; 
+}
+
+.exp__head__title {
+  font-size: 1.5rem; 
+  color: var(--eerie-black); 
+}
+
+/* Experience Details */
+.exp__title {
+  font-size: 1rem; 
+  font-weight: bold; 
+  color: var(--dark-bg); 
+}
+
+.exp__desc {
+  font-size: 0.8rem; 
+  color: #666; 
+}
+
+/* Timeline Styles */
+
+.vertical-timeline-element .vertical-timeline-element-icon {
+  background: transparent; 
+}
+
+/* Content Styles */
+.timeline-item-content {
+  padding: 1rem; /* Add padding for better spacing */
+  border-radius: 10px; /* Rounded corners */
+  background-color: white; /* Background color for content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .txt {
+    font-size: 1.5rem; 
+  }
+
+  .exp__head__title {
+    font-size: 1.2rem; 
+  }
+
+  .exp__desc {
+    font-size: 0.9rem; 
+  }
+
+  .exp__img {
+    width: 40px; 
+    height: 40px;
+  }
+}
+
+/* Additional Improvements */
+:root {
+  --highlight-color: #3498db; /* Define color variables */
+  --eerie-black: #1b1b1b; 
+  --dark-bg: #333; 
+  --taupe-color: #bdc3c7; 
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Circle Icon Image */
+.vertical-timeline-element .vertical-timeline-element-icon img {
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%;
+  object-fit: cover; 
+}

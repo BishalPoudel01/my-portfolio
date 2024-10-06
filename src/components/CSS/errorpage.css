@@ -1,0 +1,53 @@
+/* errorpage.css */
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center; /* Center align text */
+  padding: 20px; /* Add some padding */
+}
+
+.error-title {
+  font-size: 3rem; /* Larger font for the title */
+  color: #e74c3c; /* Error color (red) */
+  margin: 10px 0; /* Space above and below title */
+}
+
+.error-message {
+  font-size: 1.2rem; /* Font size for the message */
+  color: #555; /* Slightly darker gray for the message */
+  margin-bottom: 20px; /* Space below message */
+}
+
+.button-group {
+  display: flex; /* Align buttons horizontally */
+  gap: 20px; /* Space between buttons */
+}
+
+.uk-button.hover-btn {
+  background-color: #3498db; /* Primary button color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition for hover */
+}
+
+.uk-button.hover-btn:hover {
+  background-color: #2980b9; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .error-title {
+    font-size: 2rem; /* Smaller title on smaller screens */
+  }
+  .error-message {
+    font-size: 1rem; /* Smaller message on smaller screens */
+  }
+}

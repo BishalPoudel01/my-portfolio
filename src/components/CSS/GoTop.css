@@ -1,0 +1,25 @@
+/*GO to top*/
+.go-to-top {
+    background-color: #13395e; 
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 20px; /* Adjusted position */
+    right: 20px;  /* Adjusted position */
+    opacity: 1;   /* Set opacity to 1 for testing */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    z-index: 1000; 
+  }
+  
+  .go-to-top:hover {
+    background-color: #1e4a7d;
+  }
+  

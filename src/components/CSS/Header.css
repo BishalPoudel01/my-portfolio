@@ -1,0 +1,154 @@
+/* Header Styles */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.header-dark {
+  background-color: var(--dark-bg-color);
+  color: var(--light-text-color);
+}
+
+.header-light {
+  background-color: var(--light-bg-color);
+  color: var(--dark-text-color);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Name Styling */
+.gradient {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.header-dark .gradient {
+  color: #ffffff; 
+}
+
+.header-light .gradient {
+  color: #03041c; 
+}
+
+/* Navigation Arrows */
+.navigation-arrows {
+  display: flex;
+  align-items: center;
+}
+.header-dark .header-left {
+  color: #f0f0f0; 
+}
+.header-light .header-left {
+  color: #03041c; 
+}
+
+/* Slash Style */
+.slash {
+  margin: 0 0.5rem; /* Space around the slash */
+  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+/* Theme Switcher */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7da7f5;
+  transition: background-color 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 36px; 
+  width: 36px; 
+  left: 2px; 
+  bottom: 2px; 
+  background-color: white; 
+  transition: transform 0.4s; 
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #0847B6;
+}
+
+input:checked + .slider:before {
+  transform: translateX(40px); /* Adjusted to fit the new handle width */
+}
+
+/* Icon Styles */
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  transition: opacity 0.4s;
+}
+
+.sun-icon {
+  left: 10px; /* Spacing from the left */
+  color: #FFA500; /* Color for sun icon */
+}
+
+.moon-icon {
+  right: 10px; /* Spacing from the right */
+  opacity: 0.5;
+  color: #7da7f5; /* Color for moon icon */
+}
+
+input:checked + .slider .sun-icon {
+  opacity: 0.3; 
+}
+
+input:checked + .slider .moon-icon {
+  opacity: 1; 
+}
+
+/* Switch Wrapper */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;  
+  height: 40px; 
+  margin-right: 8rem; /* Adjust spacing */
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start; /* Adjust alignment for smaller screens */
+  }
+
+  .gradient {
+    font-size: 1.2rem; /* Smaller text on mobile */
+  }
+}

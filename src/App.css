@@ -1,0 +1,20 @@
+:root {
+  --primary-font: '__Raleway_159723', '__Raleway_Fallback_159723';
+  --secondary-font: '__Comic_Neue_dd23a8', '__Comic_Neue_Fallback_dd23a8';
+  --eerie-black: #1C1C1C;
+  --taupe-color: #5cbdce;
+  --primary-color: #4A90E2;
+  --hover-color: #357ABD;
+  --scrollbar-bg: #ddd;
+  --scrollbar-thumb-bg: #03041c;
+  --border-color: hsl(204, 86%, 73%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
