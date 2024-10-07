@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '24px',
     transition: 'transform 0.2s ease-in-out',
     '&:hover': {
-      transform: 'scale(1.1)', // Slight scale on hover for feedback
+      transform: 'scale(1.1)',  
     },
   },
   socialIcons: {
@@ -39,22 +39,22 @@ export const SocialIcons = () => {
     {
       network: 'Facebook',
       username: 'Facebook Profile',
-      url: 'https://facebook.com/your-profile',
+      url: 'https://www.facebook.com/share/zqMDYw7d3xKbsg6W/',
     },
     {
       network: 'Instagram',
       username: 'Instagram Profile',
-      url: 'https://instagram.com/your-profile',
+      url: 'https://www.instagram.com/bishal.poudel05?igsh=MWp2ODc0NmRlZnZkOA==',
     },
     {
       network: 'LinkedIn',
       username: 'LinkedIn Profile',
-      url: 'https://linkedin.com/in/your-profile',
+      url: 'https://www.linkedin.com/in/bishal-poudel-768999270?',
     },
     {
       network: 'GitHub',
       username: 'GitHub Profile',
-      url: 'https://github.com/your-profile',
+      url: 'https://github.com/BishalPoudel01',
     },
   ];
 

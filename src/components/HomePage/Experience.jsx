@@ -5,6 +5,7 @@ import STN from "../../img/Skillnep.png";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+// Data for experiences
 const experiencesData = [
   {
     img: NMIC,
@@ -27,7 +28,7 @@ const experiencesData = [
 const Experience = () => {
   return (
     <section id="experience" className="experience">
-      <h1 className="txt">Experience</h1>
+      <h1 className="experience__title">Experience</h1>
 
       <VerticalTimeline>
         {experiencesData.length > 0 ? (
@@ -35,37 +36,19 @@ const Experience = () => {
             <VerticalTimelineElement
               key={index}
               date={item.date}
-              iconStyle={{
-                background: "transparent", // Set background to transparent
-                border: "none", // Remove border
-              }}
-              icon={
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  style={{
-                    width: '60px', // Adjust width as necessary
-                    height: '60px', // Adjust height as necessary
-                    borderRadius: '50%', // Ensure it's round
-                    objectFit: 'cover', // Cover to fill the circle
-                  }}
-                />
-              }
+              iconStyle={iconStyle}
+              icon={renderIcon(item.img, item.name)}
             >
               <div className="timeline-item-content">
-                <div className="exp__head">
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.name} website`}>
-                  </a>
-                  <div>
-                    <h2 className="exp__head__title">
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.name} website`}>
-                        {item.name}
-                      </a>
-                    </h2>
-                    <h3 className="exp__title">{item.title}</h3>
-                  </div>
-                </div>
-                <p className="exp__desc">{item.description}</p>
+                <header className="timeline-item-header">
+                  <h2 className="timeline-item-title">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.name} website`}>
+                      {item.name}
+                    </a>
+                  </h2>
+                  <h3 className="timeline-item-subtitle">{item.title}</h3>
+                </header>
+                <p className="timeline-item-description">{item.description}</p>
               </div>
             </VerticalTimelineElement>
           ))
@@ -75,6 +58,21 @@ const Experience = () => {
       </VerticalTimeline>
     </section>
   );
+};
+
+// Helper function to render the icon
+const renderIcon = (imgSrc, altText) => (
+  <img
+    src={imgSrc}
+    alt={altText}
+    className="timeline-icon"
+  />
+);
+
+// Icon style configuration
+const iconStyle = {
+  background: "transparent",
+  border: "none",
 };
 
 export default Experience;

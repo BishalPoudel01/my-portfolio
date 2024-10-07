@@ -42,10 +42,7 @@
 
 /* Content Styles */
 .timeline-item-content {
-  padding: 1rem; /* Add padding for better spacing */
-  border-radius: 10px; /* Rounded corners */
-  background-color: white; /* Background color for content */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+   
 }
 
 /* Responsive Styles */
