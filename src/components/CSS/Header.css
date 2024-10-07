@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .header-dark {
@@ -21,11 +22,25 @@
   align-items: center;
 }
 
-/* Name Styling */
-.gradient {
-  font-size: 1.5rem;
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem; 
   font-weight: bold;
-  margin-left: 1rem;
+  color: #333; 
+}
+
+.logo-text {
+  background: linear-gradient(45deg, #2a7ddd, #5f2ee5); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0.5rem;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.slash {
+  font-size: 1.6rem;
+  color: #555; 
 }
 
 .header-dark .gradient {
@@ -36,23 +51,6 @@
   color: #03041c; 
 }
 
-/* Navigation Arrows */
-.navigation-arrows {
-  display: flex;
-  align-items: center;
-}
-.header-dark .header-left {
-  color: #f0f0f0; 
-}
-.header-light .header-left {
-  color: #03041c; 
-}
-
-/* Slash Style */
-.slash {
-  margin: 0 0.5rem; /* Space around the slash */
-  font-size: 1.5rem; /* Adjust size as needed */
-}
 
 /* Theme Switcher */
 .theme-switch-wrapper {
@@ -90,7 +88,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(40px); /* Adjusted to fit the new handle width */
+  transform: translateX(40px); 
 }
 
 /* Icon Styles */
@@ -103,14 +101,14 @@ input:checked + .slider:before {
 }
 
 .sun-icon {
-  left: 10px; /* Spacing from the left */
-  color: #FFA500; /* Color for sun icon */
+  left: 10px; 
+  color: #FFA500; 
 }
 
 .moon-icon {
-  right: 10px; /* Spacing from the right */
+  right: 10px; 
   opacity: 0.5;
-  color: #7da7f5; /* Color for moon icon */
+  color: #7da7f5;
 }
 
 input:checked + .slider .sun-icon {
@@ -145,10 +143,10 @@ input:checked + .slider .moon-icon {
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
-    align-items: flex-start; /* Adjust alignment for smaller screens */
+    align-items: flex-start;
   }
 
   .gradient {
-    font-size: 1.2rem; /* Smaller text on mobile */
+    font-size: 1.2rem; 
   }
 }

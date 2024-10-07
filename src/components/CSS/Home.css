@@ -1,22 +1,3 @@
-/* General Styles */
-:root {
-  --dark-bg: #1c1c1c; /* Dark background for dark theme */
-  --eerie-black: #2d2d2d; /* Eerie Black Color */
-  --taupe-color: #b8b3a3; /* Taupe Color */
-  --highlight-color: #ffcc00; /* Highlight Color */
-  --body-bg: #ffffff; /* Body Background */
-  --linear: linear-gradient(to right, #4a90e2, #50e3c2); /* Linear Gradient */
-  --button-bg: rgb(218, 218, 218); /* Button Background Color */
-  --button-hover-bg: rgba(255, 255, 255, 0.8); /* Button Hover Background */
-}
-
-/* Body and Background */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  transition: background-color 0.3s ease;
-}
-
 .theme-dark {
   background-color: var(--dark-bg);
 }
@@ -25,14 +6,14 @@ body {
 .bg {
   position: absolute;
   width: 80%;
-  height: 100%; /* Ensure full height */
+  height: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
 
 .bg-img {
-  opacity: 0.3; 
+  opacity: 0.3;
   object-fit: cover;
 }
 
@@ -40,9 +21,9 @@ body {
 .relative {
   position: relative;
   height: 80vh;
-  display: flex; /* Ensure proper centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -58,8 +39,8 @@ body {
 /* Typewriter Animation */
 .intro__section .type__writer {
   position: absolute;
-  left: 50%; /* Center align */
-  transform: translateX(-50%); /* Adjust for centering */
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 2px;
   transition: opacity 0.5s linear;
 }
@@ -70,21 +51,21 @@ body {
 
 /* Intro Section */
 .intro__section {
-  padding: 100px 0 180px; /* Unified padding */
+  padding: 100px 0 180px;
   position: relative;
 }
 
 .intro__section h1 {
   margin: 4px 0 10px;
   padding: 0 1rem;
-  font-size: 2.5rem; /* Increased size for visibility */
-  font-weight: 600; /* Bolder text */
+  font-size: 2.5rem;
+  font-weight: 600;
   text-align: center;
 }
 
 .intro__section h1 span {
   font-weight: bold;
-  color: var(--highlight-color); /* Highlight the span text */
+  color: var(--highlight-color);
 }
 
 .intro__section h1 span.italic {
@@ -100,33 +81,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0; /* Added margin for spacing */
+  margin: 2rem 0;
 }
 
 .profile {
-  width: 192px; /* Consistent size */
-  height: 192px; /* Consistent size */
+  width: 192px;
+  height: 192px;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add shadow transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Speaker Icon Styling */
 .intro__section .profile__icon {
   cursor: pointer;
   position: relative;
-  display: flex; /* Center the icon and text */
-  align-items: center; /* Vertically align the icon */
-  transition: transform 0.3s ease; /* Smooth scaling effect */
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
 .intro__section .profile__icon:hover {
-  transform: scale(1.05); /* Slightly enlarge the entire icon on hover */
+  transform: scale(1.05);
 }
 
 .intro__section .profile__icon .speaker__bar {
@@ -138,13 +119,13 @@ body {
   background: var(--linear);
   margin-left: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for shadow */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .intro__section .profile__icon .speaker__bar:hover {
-  background: var(--button-hover-bg); /* Lighten background on hover */
-  transform: scale(1.1); /* Scale up on hover */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+  background: var(--button-hover-bg);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Speaker Icon Animation */
@@ -169,26 +150,26 @@ body {
 /* Speaker Icon Color and Size */
 .intro__section .profile__icon .speaker__bar svg {
   fill: var(--body-bg);
-  transition: fill 0.3s ease, transform 0.3s ease; /* Smooth transition for icon color and size */
-  width: 30px; /* Set width */
-  height: 30px; /* Set height */
+  transition: fill 0.3s ease, transform 0.3s ease;
+  width: 30px;
+  height: 30px;
 }
 
 .intro__section .profile__icon:hover .speaker__bar svg {
-  fill: var(--highlight-color); /* Change icon color on hover */
-  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  fill: var(--highlight-color);
+  transform: scale(1.2);
 }
 
 /* Tooltip Styling */
 .tooltip {
-  position: relative; /* To position tooltip */
-  font-size: 0.9rem; /* Adjust tooltip font size */
+  position: relative;
+  font-size: 0.9rem;
 }
 
 .tooltip::after {
   content: "Click to hear my introduction";
   position: absolute;
-  bottom: 125%; /* Position above the icon */
+  bottom: 125%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.7);
@@ -197,17 +178,17 @@ body {
   border-radius: 5px;
   opacity: 0;
   transition: opacity 0.3s;
-  pointer-events: none; /* Ignore mouse events */
+  pointer-events: none;
 }
 
 .profile__icon:hover::after {
-  opacity: 1; /* Show tooltip on hover */
+  opacity: 1;
 }
 
 /* General Button Styling */
 .btn {
   display: inline-flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   background-color: var(--button-bg);
   border-radius: 15px;
@@ -216,7 +197,7 @@ body {
   position: relative;
   padding: 10px 20px;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease; /* Add background transition */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
 }
 
 /* Hover Effect */
@@ -249,7 +230,7 @@ body {
   }
 
   .intro__section h1 {
-    font-size: 1.5rem; /* Adjusted size */
+    font-size: 1.5rem;
   }
 
   .type__writer {
@@ -260,7 +241,7 @@ body {
 @media (max-width: 480px) {
   .profile {
     width: 150px;
-    height: 150px; /* Ensure aspect ratio */
+    height: 150px;
   }
 
   .intro__section h1 {
@@ -325,10 +306,10 @@ body {
 }
 
 .scroll-text {
-  margin-top: 7rem; 
-  font-size: 18px; 
-  color: #030303; /* Text color */
-  text-align: center; /* Center the text */
+  margin-top: 7rem;
+  font-size: 18px;
+  color: #030303;
+  text-align: center;
 }
 
 /* Info Section Styles */

@@ -6,40 +6,34 @@ import "../components/CSS/Header.css";
 const Header = ({ setTheme, theme }) => {
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme); 
+    setTheme(newTheme);
     document.body.classList.toggle("theme-dark", newTheme === "dark");
   };
 
   return (
     <header className={`header-container ${theme === "dark" ? "header-dark" : "header-light"}`}>
-      <div className="header-left">
-        <FaChevronLeft color="#03041c" size="2rem" />
-        
-        <span className="gradient">
-          Bishal <BsSlashLg className="slash" /> Portfolio
-        </span>
-        
-        <FaChevronRight color="#03041c" size="2rem" />
-      </div>
-
+     <nav className="header-left" aria-label="Portfolio navigation">
+  <span className="logo">
+    <span className="logo-text">Bishal</span>
+    <BsSlashLg className="slash" />
+    <span className="logo-text">Portfolio</span>
+  </span>
+</nav>
       <div className="header-right">
         <div className="theme-switch-wrapper" aria-label="Toggle theme switch">
-          <label className="theme-switch" aria-checked={theme === "dark"}>
+          <label className="theme-switch" htmlFor="theme-toggle">
             <input
               type="checkbox"
               id="theme-toggle"
               checked={theme === "dark"}
               onChange={toggleTheme}
+              aria-label="Toggle theme"
             />
             <span className="slider round">
               {theme === "dark" ? (
-                <span className="icon moon-icon" aria-hidden="true">
-                  <FaMoon />
-                </span>
+                <FaMoon className="icon moon-icon" aria-hidden="true" />
               ) : (
-                <span className="icon sun-icon" aria-hidden="true">
-                  <FaSun />
-                </span>
+                <FaSun className="icon sun-icon" aria-hidden="true" />
               )}
             </span>
           </label>
