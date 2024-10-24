@@ -29,7 +29,12 @@ const blogs = [
     git: "https://github.com/example/mobile-game",
     date: "Apr. 14th, 2022",
   },
+  
 ];
+
+const handleViewMore = () => {
+  console.log("View More clicked!");
+};
 
 const Blog = () => (
   <div className="container">
@@ -37,14 +42,22 @@ const Blog = () => (
       <h5 className="txt">Blogs</h5>
     </div>
     <div className="learn-more">
-      <button className="learn-more-btn">View More</button>
+      <button className="learn-more-btn" onClick={handleViewMore}>
+        View More
+      </button>
     </div>
     <div className="row align-items-stretch blog-layout">
       {blogs.map((blog) => (
-        <div className="blog-md" key={blog.id}>
-          <a href="#" className="h-entry mb-30 v-height gradient">
+        <article className="blog-md" key={blog.id}>
+          <a
+            href={blog.web || "#"} // Fallback for missing web link
+            className="h-entry mb-30 v-height gradient"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Read ${blog.title}`}
+          >
             <img className="featured-img" src={blog.img} alt={blog.title} />
-            <div className="blog-links"> {/* Ensuring correct class name */}
+            <div className="blog-links">
               <div className="web" uk-tooltip="title: Website">
                 <a
                   href={blog.web}
@@ -73,10 +86,9 @@ const Blog = () => (
               <h2>{blog.title}</h2>
             </div>
           </a>
-        </div>
+        </article>
       ))}
     </div>
-   
   </div>
 );
 
