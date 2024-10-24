@@ -8,8 +8,6 @@ import { MdContactMail } from 'react-icons/md';
 import { BiHome, BiInfoCircle } from 'react-icons/bi';
 import paths from '../Path';
 
-
-
 // Styles for the component
 const useStyles = makeStyles((theme) => ({
   iconButton: {
@@ -29,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
     alignItems: 'center',
     gap: theme.spacing(2),
+    // Hide the sidebar on mobile
+    [theme.breakpoints.down('sm')]: {
+      display: 'none', // Adjust to 'block' or 'flex' if needed for other sizes
+    },
   },
   icon: {
     fontSize: '1.7rem',

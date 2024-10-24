@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
     alignItems: 'center',
     gap: theme.spacing(2),
+    // Hide the social icons on mobile
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   icon: {
     fontSize: '1.7rem',
