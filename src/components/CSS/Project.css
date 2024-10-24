@@ -1,60 +1,49 @@
-/* Projects Section */
 .projects {
   padding-top: 7rem;
 }
-
-.project-wrapper {
+.projects .project-wrapper {
   margin-top: 3rem;
 }
-
-/* Project Content */
-.project-content {
+.projects .project-wrapper .project-content {
   cursor: pointer;
   border-radius: 20px;
   margin-bottom: 3rem;
-  transition: transform 0.4s ease-in-out;
+  transition: 0.4s ease-in-out transform;
 }
-
-/* Project Icon */
-.project-icon {
+.projects .project-wrapper .project-content .project-icon {
   height: 30px;
   border: 1px solid #d9d9d9;
   padding: 0.3rem;
   border-radius: 9px;
   margin-right: 0.5rem;
 }
-
-/* Project Heading and Description */
-.project-content a {
+.projects .project-wrapper .project-content a {
   display: block;
 }
-
-.project-content h5 {
+.projects .project-wrapper .project-content h5 {
   font-weight: bold;
-  padding: 1rem 0 0 1rem; /* Adjust padding */
+  padding: 1rem;
   margin: 0;
+  padding-bottom: 0;
   font-size: 18px;
 }
-
-.project-content span {
+.projects .project-wrapper .project-content span {
   margin: 0;
-  padding: 0.5rem 1rem; /* Adjust padding */
+  padding: 1rem;
   border-bottom: 1px solid #d9d9d9;
+  padding-top: 0.5rem;
+  display: inline-block;
   color: #555;
   font-size: 14px;
 }
-
-.project-content span:hover {
+.projects .project-wrapper .project-content span:hover {
   text-decoration: none;
 }
-
-/* Project Swiper */
-.project-swiper {
+.projects .project-wrapper .project-content .project-swiper {
   position: relative;
   overflow: hidden;
 }
-
-.project-bg {
+.projects .project-wrapper .project-content .project-swiper .project-bg {
   background: linear-gradient(90.7deg, rgba(27, 32, 131, 0.8) 0%, rgba(3, 4, 28, 0.8) 100%);
   position: absolute;
   top: 0;
@@ -65,67 +54,50 @@
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
-
-.project-link {
+.projects .project-wrapper .project-content .project-swiper .project-link {
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.project-link .web,
-.project-link .git {
+.projects .project-wrapper .project-content .project-swiper .project-link .web {
+  transition: all 0.3s ease-in-out;
+}
+.projects .project-wrapper .project-content .project-swiper .project-link .git {
+  transition: all 0.3s ease-in-out 0.3s;
+}
+.projects .project-wrapper .project-content .project-swiper .project-link .web,
+.projects .project-wrapper .project-content .project-swiper .project-link .git {
+  margin-top: -300%;
   width: 50px;
   height: 50px;
   background: #fff;
   line-height: 50px;
   border-radius: 50%;
-  margin: 0 0.5rem;
-  transition: all 0.3s ease-in-out;
-  margin-top: -300%; /* Initially hidden */
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
-
-.project-link .web:hover,
-.project-link .git:hover {
+.projects .project-wrapper .project-content .project-swiper .project-link .web a,
+.projects .project-wrapper .project-content .project-swiper .project-link .git a {
+  line-height: 50px;
+  text-align: center;
+  display: block;
+}
+.projects .project-wrapper .project-content .project-swiper .project-link .web:hover,
+.projects .project-wrapper .project-content .project-swiper .project-link .git:hover {
   transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.21, 0.6, 0.44, 2.18) !important;
 }
-
-/* Hover Effects */
-.project-content:hover {
+.projects .project-wrapper .project-content:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #ebebeb;
 }
-
-.project-content:hover .project-bg {
+.projects .project-wrapper .project-content:hover .project-bg {
   opacity: 1;
+  cursor: pointer;
   visibility: visible;
 }
-
-.project-content:hover .project-link .web,
-.project-content:hover .project-link .git {
-  margin-top: 0; /* Show icons on hover */
-}
-
-/* Learn More Button */
-.learn-more {
-  margin-top: 5px; /* Space between heading and button */
-}
-
-.learn-more-btn {
-  background-color: #217ee7; /* Button color */
-  padding: 8px 16px; /* Adjust padding */
-  color: #03041c; /* Button text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 5px; /* Rounded corners */
-  font-weight: bold; /* Bold text */
-  display: inline-block; /* Block level element */
-  font-size: 0.9rem; /* Smaller font size */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-}
-
-.learn-more-btn:hover {
-  background-color: #0f4685; /* Change background on hover */
-  transform: scale(1.05); /* Slightly enlarge button */
-  color: #fff; /* Change text color on hover */
+.projects .project-wrapper .project-content:hover .project-link > .web, .projects .project-wrapper .project-content:hover .project-link > .git {
+  margin-top: 0;
 }

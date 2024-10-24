@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef } from "react"; // Keep useRef for speech synthesis
 import "../CSS/Home.css"; 
 import { BiArrowFromLeft, BiDownload } from "react-icons/bi";
 import Typewriter from "typewriter-effect";
@@ -15,14 +15,11 @@ const Home = () => {
   return (
     <>
       <BackgroundImage />
-      <section className="relative flex flex-col items-center justify-center w-full h-screen mx-auto text-center overflow-hidden">
-        <div className="z-10 text-eerieBlack font-poppins">
+      <section>
+        <div className="z-10">
           <ProfileSection textToSpeakRef={textToSpeakRef} />
           <h1 className="uppercase">
-            Hi, I'm{' '}
-            <span className="sm:text-battleGray sm:text-[90px] text-eerieBlack text-[50px] font-mova font-extrabold uppercase">
-              Bishal
-            </span>
+            Hi, I'm <span>Bishal</span>
           </h1>
           <TypewriterComponent />
         </div>
@@ -44,7 +41,7 @@ const Home = () => {
 
 // Profile Section Component
 const ProfileSection = ({ textToSpeakRef }) => {
-  const speakText = () => {
+  const handleSpeakText = () => {
     if (typeof SpeechSynthesisUtterance !== "undefined") {
       const utterance = new SpeechSynthesisUtterance(textToSpeakRef.current);
       utterance.onerror = (event) => {
@@ -60,21 +57,22 @@ const ProfileSection = ({ textToSpeakRef }) => {
     <div className="profile__wrapper">
       <img
         src={profile}
-        alt="Profile of Bishal"
+        alt="Bishal's profile picture"
         width="192"
         height="192"
         className="profile"
+        loading="lazy" // Improve performance
       />
       <motion.div
         className="profile__icon tooltip"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", stiffness: 125, delay: 0.5, duration: 0.7 }}
-        onClick={speakText}
+        onClick={handleSpeakText}
         role="button"
-        aria-label="Speak introduction" // Updated to improve accessibility
+        aria-label="Speak introduction"
         tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && speakText()}
+        onKeyDown={(e) => e.key === 'Enter' && handleSpeakText()}
       >
         <div className="speaker__bar">
           <PiSpeakerSimpleHighFill size="1.5rem" />
@@ -85,17 +83,19 @@ const ProfileSection = ({ textToSpeakRef }) => {
 };
 
 // Typewriter Component
-const TypewriterComponent = () => (
-  <div className="typewriter-text">
-    <Typewriter
-      options={{
-        strings: ["Digital Marketer", "Graphic Designer"],
-        autoStart: true,
-        loop: true,
-      }}
-    />
-  </div>
-);
+const TypewriterComponent = () => {
+  const typewriterOptions = {
+    strings: ["Digital Marketer", "Graphic Designer"],
+    autoStart: true,
+    loop: true,
+  };
+
+  return (
+    <div className="typewriter-text">
+      <Typewriter options={typewriterOptions} />
+    </div>
+  );
+};
 
 // Background Image Component
 const BackgroundImage = () => {
